@@ -12,26 +12,7 @@ using std::cout;
 
 namespace VECTOR {
  const double Rad_to_deg = 45.0 / atan(1.0);
- // privat methods:
- void Vector::set_mag() {
-   mag = sqrt(x * x +y * y);
- }
-
- void Vector::set_ang() {
-   if (x == 0.0 && y == 0.0)  {
-     ang = 0.0 ;
-   } else {
-     ang = atan2(y, x);
-   }
- }
-
- void Vector::set_x() {
-   x = mag * cos(ang);
- }
-
- void Vector::set_y() {
-   y = mag * sin(ang);
- }
+ 
  //public methods:
  Vector::Vector() {
    x = y = mag = ang = 0.0;
@@ -43,8 +24,8 @@ namespace VECTOR {
    if (form == RECT)   {
      x = n1;
      y = n2;
-     set_mag();
-     set_ang();
+     mag = magval();
+     ang = angval();
    } else if (form == POL)  {
      mag = n1;
      ang = n2 / Rad_to_deg;
@@ -63,8 +44,8 @@ namespace VECTOR {
    if (form == RECT)  {
      x = n1;
      y = n2;
-     set_mag();
-     set_ang();
+     mag = magval();
+     ang = angval();
    }  else if (form == POL) {
      mag = n1;
      ang = n2 / Rad_to_deg;
@@ -79,6 +60,20 @@ namespace VECTOR {
  }
 
  Vector::~Vector() { }
+
+ double Vector::magval() {
+    mag = sqrt(x * x +y * y);
+    return mag;
+ } 
+
+ double Vector::angval() {
+   if (x == 0.0 && y == 0.0)  {
+     ang = 0.0 ;
+   } else {
+     ang = atan2(y, x);
+   }
+   return ang;
+ }
 
  void Vector::polar_mode() {
    mode = POL;
@@ -117,6 +112,26 @@ namespace VECTOR {
      os << "Vector object mode is invalid";
    }
    return os;
+ }
+ // privat methods:
+//  void Vector::set_mag() {
+//    mag = sqrt(x * x +y * y);
+//  }
+// 
+//  void Vector::set_ang() {
+//    if (x == 0.0 && y == 0.0)  {
+//      ang = 0.0 ;
+//    } else {
+//      ang = atan2(y, x);
+//    }
+//  }
+
+ void Vector::set_x() {
+   x = mag * cos(ang);
+ }
+
+ void Vector::set_y() {
+   y = mag * sin(ang);
  }
 
 }// end namespace VECTOR

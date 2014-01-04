@@ -13,8 +13,8 @@ namespace VECTOR {
    	~Vector();
     double xval() const {return x;}
     double yval() const {return y;}
-    double magval() const {return mag;}
-    double angval() const {return ang;}
+    double magval(); 
+    double angval();
     void polar_mode();
     void rect_mode();
     Vector operator+(const Vector & b) const;
@@ -25,8 +25,8 @@ namespace VECTOR {
     friend std::ostream & operator << (std::ostream & os, const Vector & v);
 
   private:
-    void set_mag();
-    void set_ang();
+//     void set_mag();
+//     void set_ang();
     void set_x();
     void set_y();
     double x;
