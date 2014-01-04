@@ -43,7 +43,7 @@ void main()
       break;
     //加入文件读写
     fout << "Target Distance: " << target <<", Step Size: " << dstep << endl;
-    fout << step << ": (x,y) = ("
+    fout << steps << ": (x,y) = ("
          << result.xval() << ", " << result.yval() << ")\n";
     while (result.magval() < target)
     {
@@ -51,7 +51,7 @@ void main()
       step.Reset(dstep, direction, Vector::POL);
       result = result + step;
       steps++;
-      fout << step << ": (x,y) = (" 
+      fout << steps << ": (x,y) = (" 
            << result.xval() << ", " << result.yval() << ")\n";
     }
     cout << "After " << steps << " steps, the subject "
