@@ -1,9 +1,6 @@
 // stonewt.h -- definition for the Stonewt class
 #ifndef STONEWT_H_
 #define STONEWT_H_
-
-
-
 class Stonewt
 {
 private:
@@ -29,6 +26,12 @@ public:
     Stonewt operator*(double n) const;
     friend Stonewt operator*(double n, const Stonewt & a);
     friend std::ostream & operator << (std::ostream & os, const Stonewt & v);
+    bool operator>(const Stonewt & b) { return pounds > b.pounds; }
+    bool operator<(const Stonewt & b) { return pounds < b.pounds ; }
+    bool operator==(const Stonewt & b) { return pounds == b.pounds;  }
+    bool operator>=(const Stonewt & b) { return !(pounds < b.pounds ); }
+    bool operator<=(const Stonewt & b) { return !(pounds>b.pounds); }
+    bool operator!=(const Stonewt & b) { return !(pounds == b.pounds); }
 };
 
 void display(const Stonewt & st, int n); //for stone class

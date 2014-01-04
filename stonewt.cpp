@@ -31,7 +31,7 @@ Stonewt::Stonewt(int stn, double lbs)
 Stonewt::Stonewt()          // default constructor, wt = 0
 {
     stone = pounds = pds_left = 0;
-    mode = POUNDS_INT;
+    mode = STONE;
 }
 
 Stonewt::~Stonewt()         // destructor
@@ -75,7 +75,7 @@ Stonewt Stonewt::operator-() const {
 }
 
 Stonewt Stonewt::operator*(double n) const {
-  return Stonewt(n * stone, n * pounds);
+  return Stonewt((int)(n * stone), n * pounds);
 }
 
 Stonewt operator*(double n, const Stonewt & a) {
@@ -88,7 +88,7 @@ std::ostream & operator << (std::ostream & os, const Stonewt & v) {
   } else if (v.mode == Stonewt::POUNDS_FLOAT) {
     os << v.pounds << " pounds\n";
   } else {
-    os << v.pds_left << " pounds\n";
+    os << v.pounds + v.pds_left << " pounds\n";
   }
   return os;
 }

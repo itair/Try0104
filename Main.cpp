@@ -91,6 +91,7 @@ void main()
     steps_total = steps_max = steps_min = 0;
     cout << "Enter target distance (q to quit): ";     
   }
+  fout.close();
   cout << "Bye!\n";
   //1---现有库类的调用方法 实际读写
   //2-- 类内部改写不影响接口
@@ -110,7 +111,7 @@ void main()
   cout << "10 * Tosca: " << 10 * tosca << endl;
   // 友元用法,, 成员函数 与非成员函数的 转换
 
-  longline(5); //5
+  longline(5); //5  
   Stonewt pavarotti = 260; // uses constructor to initialize
   Stonewt wolfe(285.7);    // same as Stonewt wolfe = 285.7;
   Stonewt taft(21, 8);
@@ -147,6 +148,29 @@ void main()
   //友元重载 运算符 // 类内标记 用枚举
 
   longline(6); //6
+  int sq_min(0), sq_max(0), num_bigger(0);
+  Stonewt standard(11, 0);
+  Stonewt sd[6] = {Stonewt(200),Stonewt(300),Stonewt(400)};
+  double plf = 0.0;
+  int ji = 6;
+  cout << "Enter 3 weight in form of pounds\n"; 
+  cin.clear();
+  cin.get();
+  while ( --ji != 2 && cin >> plf ){
+    sd[ji] = Stonewt(plf);   
+  }
+   for (int i = 0; i < 6 ; i++) {
+     if (sd[i] >= standard)
+       num_bigger++;
+     sq_max = (sd[i] > sd[sq_max]) ? i : sq_max ;
+     sq_min = (sd[i] < sd[sq_min]) ? i : sq_min ;
+   }
+   cout << "Max number : \n" << sd[sq_max];
+   cout << "Min number : \n" << sd[sq_min];
+   cout << num_bigger << " numbers beyond " << standard;
+   //操作符重载, 循环初始化, 重载后的应用;
+
+
 
 
 
