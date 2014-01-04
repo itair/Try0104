@@ -14,6 +14,7 @@
 #include "vect.h"
 #include "mytime3.h"
 #include "stonewt.h"
+#include "complex01.h"
 
 void main()
 {
@@ -154,8 +155,8 @@ void main()
   double plf = 0.0;
   int ji = 6;
   cout << "Enter 3 weight in form of pounds\n"; 
-  cin.clear();
-  cin.get();
+  cin.clear();  //清除错误标记
+  cin.sync();   //清空输入流
   while ( --ji != 2 && cin >> plf ){
     sd[ji] = Stonewt(plf);   
   }
@@ -164,15 +165,28 @@ void main()
        num_bigger++;
      sq_max = (sd[i] > sd[sq_max]) ? i : sq_max ;
      sq_min = (sd[i] < sd[sq_min]) ? i : sq_min ;
-   }
-   cout << "Max number : \n" << sd[sq_max];
-   cout << "Min number : \n" << sd[sq_min];
-   cout << num_bigger << " numbers beyond " << standard;
-   //操作符重载, 循环初始化, 重载后的应用;
+  }
+  cout << "Max number : \n" << sd[sq_max];
+  cout << "Min number : \n" << sd[sq_min];
+  cout << num_bigger << " numbers beyond " << standard;
+  //操作符重载, 循环初始化, 重载后的应用;
 
-
-
-
+  longline(7); //7
+  Complex a(3.0, 4.0);
+  Complex c;
+  cout << "Enter a  complex number (q to quit):\n";
+  while (cin >> c)  {
+    cout << "c is " << c << endl;
+    cout << "complex conjugate is " << ~c << endl;
+    cout << "a is " << a << endl;
+    cout << "a + c is " << a + c << endl;
+    cout << "a - c is " << a - c << endl;
+    cout << "a * c is " << a * c << endl;
+    cout << "2 * c is " << 2 * c << endl;
+    cout << "Enter a complex number (q to quit):\n";
+  }
+  cout << "Done!\n";
+  //按照功能设计类 的重载.
 
   longline();
   system("pause");

@@ -76,6 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="complex01.cpp" />
     <ClCompile Include="GobalFuc.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mytime3.cpp" />
@@ -84,6 +85,7 @@
     <ClCompile Include="vect.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="complex01.h" />
     <ClInclude Include="GobalFuc.h" />
     <ClInclude Include="Inline.h" />
     <ClInclude Include="mytime3.h" />
