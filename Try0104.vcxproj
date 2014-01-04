@@ -78,12 +78,16 @@
   <ItemGroup>
     <ClCompile Include="GobalFuc.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="mytime1.cpp" />
     <ClCompile Include="Try.cpp" />
+    <ClCompile Include="vect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GobalFuc.h" />
     <ClInclude Include="Inline.h" />
+    <ClInclude Include="mytime1.h" />
     <ClInclude Include="Try.h" />
+    <ClInclude Include="vect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
