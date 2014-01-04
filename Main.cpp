@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "vect.h"
+#include "mytime3.h"
 
 void main()
 {
@@ -93,7 +94,23 @@ void main()
   //1---现有库类的调用方法 实际读写
   //2-- 类内部改写不影响接口
   //3-- 应用 外部改写 不影响 类的结构
-  longline(2); //2
+
+  longline(4); //4
+  Time aida(3, 35);
+  Time tosca(2, 48);
+  Time temp;
+
+  cout << "Aida and Tosca:\n";
+  cout << aida<<"; " << tosca << endl;
+  temp = aida + tosca;     // operator+()
+  cout << "Aida + Tosca: " << temp << endl;
+  temp = aida * 1.17;  // member operator*()
+  cout << "Aida * 1.17: " << temp << endl;
+  cout << "10 * Tosca: " << 10 * tosca << endl;
+  // 友元用法,, 成员函数 与非成员函数的 转换
+
+  longline(5); //5
+
 
 
 
