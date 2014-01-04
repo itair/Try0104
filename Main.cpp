@@ -13,6 +13,7 @@
 #include <ctime>
 #include "vect.h"
 #include "mytime3.h"
+#include "stonewt.h"
 
 void main()
 {
@@ -110,8 +111,42 @@ void main()
   // 友元用法,, 成员函数 与非成员函数的 转换
 
   longline(5); //5
+  Stonewt pavarotti = 260; // uses constructor to initialize
+  Stonewt wolfe(285.7);    // same as Stonewt wolfe = 285.7;
+  Stonewt taft(21, 8);
 
+  cout << "The tenor weighed ";
+  pavarotti.show_stn();
+  cout << "The detective weighed ";
+  wolfe.show_stn();
+  cout << "The President weighed ";
+  taft.show_lbs();
+  pavarotti = 265.8;       // uses constructor for conversion
+  taft = 325;             // same as taft = Stonewt(325);
+  cout << "After dinner, the tenor weighed ";
+  pavarotti.show_stn();
+  cout << "After dinner, the President weighed ";
+  taft.show_lbs();
+  display(taft, 2);
+  cout << "The wrestler weighed even more.\n";
+  display(422, 2);
+  cout << "No stone left unearned\n";
 
+  Stonewt plus = wolfe + taft;
+  plus.mode_stone();
+  cout << "Shwo Plus and STONE \n";
+  cout << plus << endl;
+  Stonewt minuts = wolfe - pavarotti;
+  minuts.mode_pdf();
+  cout << "Show Minute and PDF\n";
+  cout << minuts << endl;
+  Stonewt mix = minuts * 3;
+  cout << "Show mitip and PDS\n";
+  mix.mode_pds() ;
+  cout << mix << endl;
+  //友元重载 运算符 // 类内标记 用枚举
+
+  longline(6); //6
 
 
 

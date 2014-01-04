@@ -30,6 +30,9 @@
     <ClInclude Include="mytime3.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="stonewt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -45,6 +48,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="mytime3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stonewt.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

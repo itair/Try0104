@@ -79,6 +79,7 @@
     <ClCompile Include="GobalFuc.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mytime3.cpp" />
+    <ClCompile Include="stonewt.cpp" />
     <ClCompile Include="Try.cpp" />
     <ClCompile Include="vect.cpp" />
   </ItemGroup>
@@ -86,6 +87,7 @@
     <ClInclude Include="GobalFuc.h" />
     <ClInclude Include="Inline.h" />
     <ClInclude Include="mytime3.h" />
+    <ClInclude Include="stonewt.h" />
     <ClInclude Include="Try.h" />
     <ClInclude Include="vect.h" />
   </ItemGroup>
