@@ -6,7 +6,7 @@
 #include <iostream>
 
 //常量
-
+const unsigned long kMax = 9999999;
 //类与结构
 
 //模版
